@@ -3,7 +3,7 @@ from app.models import ScrapedData
 import time
 
 # Initialize NewsAPI client
-newsapi = NewsApiClient(api_key='')
+newsapi = NewsApiClient(api_key='your_api_key_here')
 
 def scrape_data():
     countries_and_languages = {
