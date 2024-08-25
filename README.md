@@ -39,7 +39,7 @@ This project serves as a practical example of:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/AXRoux/DataScraperMap.git
+   git clone https://github.com/AXRoux/data_scraping_map_demo.git
    cd DataScraperMap
    ```
 
