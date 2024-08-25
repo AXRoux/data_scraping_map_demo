@@ -63,9 +63,7 @@ This project serves as a practical example of:
 
 5. Initialize the database:
    ```
-   flask db init
-   flask db migrate
-   flask db upgrade
+   python init_db.py
    ```
 
 6. Run the application:
