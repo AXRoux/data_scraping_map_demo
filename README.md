@@ -40,7 +40,7 @@ This project serves as a practical example of:
 1. Clone the repository:
    ```
    git clone https://github.com/AXRoux/data_scraping_map_demo.git
-   cd DataScraperMap
+   cd data_scraping_map_demo
    ```
 
 2. Set up a virtual environment:
