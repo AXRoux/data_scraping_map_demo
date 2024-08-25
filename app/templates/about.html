@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About DataScraperMap</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">DataScraperMap</div>
+            <ul>
+                <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                <li><a href="{{ url_for('main.about') }}" class="active">About</a></li>
+                <li><a href="{{ url_for('main.map') }}">Map</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>About DataScraperMap</h1>
+                <p class="lead">Educating individuals on data scraping with Python and AI-powered rapid prototyping.</p>
+            </div>
+        </section>
+
+        <section id="mission">
+            <div class="container">
+                <h2>Our Mission</h2>
+                <p>To empower developers and data enthusiasts with the knowledge and tools to ethically scrape and analyze web data.</p>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <div class="feature-card">
+                    <h3>Python Data Scraping</h3>
+                    <div class="code-demo">
+                        <pre><code class="language-python">
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://example.com"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+data = soup.find_all('div', class_='data-item')
+for item in data:
+    print(item.text)
+                        </code></pre>
+                    </div>
+                    <p>Learn how to extract valuable information from websites using Python and popular libraries.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>AI-Powered Rapid Prototyping</h3>
+                    <div class="ai-demo">
+                        <code>
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+# Generate synthetic data
+X = np.random.rand(1000, 5)
+y = (X[:, 0] + X[:, 1] > 1).astype(int)
+
+# Split data into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize and train the model
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+# Make predictions and calculate accuracy
+y_pred = model.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+
+print(f"Model accuracy: {accuracy:.2f}")
+
+# Feature importance analysis
+feature_importance = model.feature_importances_
+for i, importance in enumerate(feature_importance):
+    print(f"Feature {i+1} importance: {importance:.4f}")
+                        </code>
+                    </div>
+                    <p>Discover how AI can accelerate your development process by rapidly prototyping machine learning models. This example demonstrates creating a synthetic dataset, training a Random Forest classifier, evaluating its performance, and analyzing feature importance - all in just a few lines of code.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits">
+            <div class="container">
+                <h2>Benefits of Our Approach</h2>
+                <ul class="benefits-list">
+                    <li>Learn ethical data scraping techniques</li>
+                    <li>Understand the power of Python for web data extraction</li>
+                    <li>Leverage AI to speed up your development process</li>
+                    <li>Gain insights from real-world data</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 DataScraperMap</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/about.js') }}"></script>
+</body>
+</html>
