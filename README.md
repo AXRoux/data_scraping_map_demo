@@ -58,7 +58,8 @@ This project serves as a practical example of:
    - Sign up for a free API key at [NewsAPI](https://newsapi.org/)
    - Create a `.env` file in the project root and add your API key:
      ```
-     NEWS_API_KEY=your_api_key_here if that doesn't work setup api key in scraper.py
+     NEWS_API_KEY=your_api_key_here 
+     if that doesn't work setup api key in scraper.py
      ```
 
 5. Initialize the database:
