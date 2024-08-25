@@ -68,7 +68,7 @@ This project serves as a practical example of:
 
 6. Run the application:
    ```
-   flask run
+   flask run or python run.py
    ```
 
 7. Open a web browser and navigate to `http://localhost:5000`
