@@ -45,9 +45,18 @@ This project serves as a practical example of:
 
 2. Set up a virtual environment:
    ```
+   For Windows
+   
    python -m venv venv
-   venv\Scripts\activate.bat or .\venv\Scripts\Activate.ps1 for windows
+   venv\Scripts\activate.bat or .\venv\Scripts\Activate.ps1
    ```
+   ```
+   For Linux
+   
+   python -m venv venv
+   source venv/bin/activate or . venv/bin/activate
+   ```
+   
 
 3. Install required packages:
    ```
