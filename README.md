@@ -4,6 +4,10 @@
 
 DataScraperMap is an educational web application that demonstrates the power of data scraping, API integration, and interactive data visualization. This project fetches real-time news data from various countries using the NewsAPI and displays it on an interactive world map.
 
+## Hackable Playground
+
+You have full permission to make any changes you want, don't be afraid to push the boundaries of your imagination.
+
 ## Key Features
 
 - Fetches top headlines from multiple countries (US, Brazil, China, Russia, UK)
