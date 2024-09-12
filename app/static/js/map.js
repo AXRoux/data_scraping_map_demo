@@ -30,10 +30,17 @@ function scrapeData() {
     fetch('/scrape-data', { method: 'POST' })
         .then(response => response.json())
         .then(data => {
-            updateMap(data.data);
-            alert(`Scraped ${data.new_items} new items!`);
+            if (data.data && data.data.length > 0) {
+                updateMap(data.data);
+                alert(`Scraped ${data.new_items} new items!`);
+            } else {
+                alert('No new data scraped.');
+            }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while scraping data.');
+        });
 }
 
 function loadExistingData() {
@@ -81,7 +88,7 @@ function updateMap(data) {
 }
 
 function createPopupContent(points, country, category) {
-    let content = `<div class="custom-popup"><h2>${getCountryName(country)} - ${formatCategory(category)}</h2>`;
+    let content = `<div class="custom-popup"><h2>${getCountryName(country)}${category ? ' - ' + formatCategory(category) : ''}</h2>`;
     points.forEach((point, index) => {
         content += `
             <div class="news-item ${index > 0 ? 'news-item-border' : ''}">
@@ -106,22 +113,22 @@ function formatCategory(category) {
 
 function getCountryLatLng(countryCode) {
     const coordinates = {
-        'US': [37.0902, -95.7129],
         'BR': [-14.2350, -51.9253],
         'CN': [35.8617, 104.1954],
         'RU': [61.5240, 105.3188],
-        'GB': [55.3781, -3.4360]
+        'KP': [40.3399, 127.5101],
+        'IR': [32.4279, 53.6880]  // Added coordinates for Iran
     };
     return coordinates[countryCode] || null;
 }
 
 function getCountryName(countryCode) {
     const names = {
-        'US': 'United States',
         'BR': 'Brazil',
         'CN': 'China',
         'RU': 'Russia',
-        'GB': 'United Kingdom'
+        'KP': 'North Korea',
+        'IR': 'Iran'  // Added name for Iran
     };
     return names[countryCode] || countryCode;
 }

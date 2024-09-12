@@ -20,8 +20,7 @@ def about():
 @main.route('/scrape')
 def scrape():
     try:
-        count = scrape_data()
-        data = get_all_data()
+        count, data = scrape_data()
         return jsonify({"success": True, "count": count, "data": [item.to_dict() for item in data]})
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
@@ -38,7 +37,7 @@ def data():
 
 @main.route('/scrape-data', methods=['POST'])
 def scrape_and_update():
-    new_items_count = scrape_data()
+    new_items_count, new_data = scrape_data()
     all_data = get_all_data()
     return jsonify({
         'new_items': new_items_count,
