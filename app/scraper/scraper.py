@@ -4,7 +4,7 @@ import time
 from datetime import datetime, timedelta
 
 # Initialize NewsDataAPI client
-api = NewsDataApiClient(apikey="pub_532727ab04b725a8865b9d16fbe7b955aace7")
+api = NewsDataApiClient(apikey="your_api_key_here")
 
 MAX_REQUESTS_PER_DAY = 200
 MAX_SITES_PER_COUNTRY = 10  # This matches the default page size of the API
